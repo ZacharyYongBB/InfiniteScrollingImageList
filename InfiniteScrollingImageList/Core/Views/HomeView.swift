@@ -14,10 +14,19 @@
  
  Requirements:
  UI: Display images in a UICollectionView or UITableView.
+ used SwiftUI List
+ 
  Networking: Fetch image data from the API, handling pagination and errors.
+ ok
+ 
  Pagination: Load images in batches as the user scrolls.
+ ok
+ 
  Lazy Loading: Load images only when visible on screen.
+ ok
+ 
  Image Caching: Cache images to avoid re-downloading.
+ ok
  
  Testing:
  Unit Tests: Verify networking, pagination, and caching logic.
@@ -26,8 +35,14 @@
  
  Bonus Points:
  Error handling with informative messages.
+ ok used Alert
+ 
  Placeholders for images while loading.
+ ok
+ 
  Customization of images per page.
+ 
+ 
  Evaluation Criteria:
  Functionality
  Code quality (Swift best practices)

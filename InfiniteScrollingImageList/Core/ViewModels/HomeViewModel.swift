@@ -23,14 +23,18 @@ class HomeViewModel: ObservableObject {
             let newImages = try await imageService.fetchImages(page: currentPage)
             images.append(contentsOf: newImages)
             currentPage += 1
+            
             alertMessage = nil
             showAlert = false
         } catch let error as ErrorMessage {
             alertMessage = error.userFriendlyMessage
             showAlert = true
+            print("Developer Error Message: \(error.developerMessage)")
         } catch {
-            alertMessage = ErrorMessage.unknownError.userFriendlyMessage
+            let unknownError = ErrorMessage.unknownError
+            alertMessage = unknownError.userFriendlyMessage
             showAlert = true
+            print("Developer Error Message: \(unknownError.developerMessage)")
         }
         isLoadingMore = false
     }

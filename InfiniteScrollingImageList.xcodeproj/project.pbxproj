@@ -19,6 +19,7 @@
 		B631A71A2C45708F003F7056 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7192C45708F003F7056 /* HomeViewModel.swift */; };
 		B631A71C2C457200003F7056 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A71B2C457200003F7056 /* ImageService.swift */; };
 		B631A71E2C4577F8003F7056 /* ImageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A71D2C4577F8003F7056 /* ImageRowView.swift */; };
+		B631A7252C45B5F0003F7056 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7242C45B5F0003F7056 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B631A7192C45708F003F7056 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B631A71B2C457200003F7056 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		B631A71D2C4577F8003F7056 /* ImageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowView.swift; sourceTree = "<group>"; };
+		B631A7242C45B5F0003F7056 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				B631A7152C456DE6003F7056 /* ErrorMessage.swift */,
+				B631A7242C45B5F0003F7056 /* ImageCache.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			files = (
 				B604E0F42C456BD20003A545 /* HomeView.swift in Sources */,
 				B631A7162C456DE6003F7056 /* ErrorMessage.swift in Sources */,
+				B631A7252C45B5F0003F7056 /* ImageCache.swift in Sources */,
 				B604E0F22C456BD20003A545 /* InfiniteScrollingImageListApp.swift in Sources */,
 				B631A71E2C4577F8003F7056 /* ImageRowView.swift in Sources */,
 				B631A71A2C45708F003F7056 /* HomeViewModel.swift in Sources */,
