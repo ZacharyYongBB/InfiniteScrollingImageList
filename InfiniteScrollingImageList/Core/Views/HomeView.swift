@@ -53,43 +53,15 @@
 
 import SwiftUI
 
+// Main view
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
         VStack {
-            Stepper("Images per Page: \(viewModel.imagesPerPage)", value: $viewModel.imagesPerPage, in: 1...100)
-                .padding()
-                .onChange(of: viewModel.imagesPerPage) {
-                    viewModel.resetImages()
-                    Task {
-                        await viewModel.fetchImages()
-                    }
-                }
+            HeaderView(viewModel: viewModel)
             
-            List {
-                ForEach(viewModel.images) { image in
-                    ImageRowView(image: image)
-                }
-                
-                if !viewModel.isLoadingMore {
-                    Button(action: {
-                        Task {
-                            await viewModel.fetchImages()
-                        }
-                    }) {
-                        Text("Load More")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                    .padding()
-                } else {
-                    ProgressView()
-                        .padding()
-                }
-            }
+            ImageListView(viewModel: viewModel)
         }
         .task {
             await viewModel.fetchImages()
@@ -102,6 +74,53 @@ struct HomeView: View {
                 message: Text(viewModel.alertMessage ?? "An unknown error occurred."),
                 dismissButton: .default(Text("OK"))
             )
+        }
+    }
+}
+
+// Header view containing the Stepper
+struct HeaderView: View {
+    @ObservedObject var viewModel: HomeViewModel
+    
+    var body: some View {
+        Stepper("Images per Page: \(viewModel.imagesPerPage)", value: $viewModel.imagesPerPage, in: 1...100)
+            .padding()
+            .onChange(of: viewModel.imagesPerPage) {
+                viewModel.resetImages()
+                Task {
+                    await viewModel.fetchImages()
+                }
+            }
+    }
+}
+
+// List view for displaying images and load more button
+struct ImageListView: View {
+    @ObservedObject var viewModel: HomeViewModel
+    
+    var body: some View {
+        List {
+            ForEach(viewModel.images) { image in
+                ImageRowView(image: image)
+            }
+            
+            if !viewModel.isLoadingMore {
+                Button(action: {
+                    Task {
+                        await viewModel.fetchImages()
+                    }
+                }) {
+                    Text("Load More")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding()
+            } else {
+                ProgressView()
+                    .padding()
+            }
         }
     }
 }
