@@ -40,7 +40,7 @@ class HomeViewModel: ObservableObject {
         isLoadingMore = false
     }
     
-    func resetImages() {
+    func resetImages() async {
         images.removeAll()
         currentPage = 1
     }

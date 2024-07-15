@@ -20,6 +20,7 @@
 		B631A71C2C457200003F7056 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A71B2C457200003F7056 /* ImageService.swift */; };
 		B631A71E2C4577F8003F7056 /* ImageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A71D2C4577F8003F7056 /* ImageRowView.swift */; };
 		B631A7252C45B5F0003F7056 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7242C45B5F0003F7056 /* ImageCache.swift */; };
+		B631A7282C45BF2F003F7056 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7272C45BF2F003F7056 /* PrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B631A71B2C457200003F7056 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		B631A71D2C4577F8003F7056 /* ImageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRowView.swift; sourceTree = "<group>"; };
 		B631A7242C45B5F0003F7056 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		B631A7272C45BF2F003F7056 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		B604E11C2C456BE80003A545 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B631A7262C45BE2B003F7056 /* ViewModifiers */,
 				B604E1212C456C460003A545 /* Utilities */,
 				B604E1202C456C3F0003A545 /* Services */,
 				B604E11F2C456C180003A545 /* Models */,
@@ -193,6 +196,14 @@
 				B631A7242C45B5F0003F7056 /* ImageCache.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B631A7262C45BE2B003F7056 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				B631A7272C45BF2F003F7056 /* PrimaryButton.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B631A7282C45BF2F003F7056 /* PrimaryButton.swift in Sources */,
 				B604E0F42C456BD20003A545 /* HomeView.swift in Sources */,
 				B631A7162C456DE6003F7056 /* ErrorMessage.swift in Sources */,
 				B631A7252C45B5F0003F7056 /* ImageCache.swift in Sources */,

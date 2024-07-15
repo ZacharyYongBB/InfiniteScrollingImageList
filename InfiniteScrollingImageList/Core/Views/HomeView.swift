@@ -86,8 +86,8 @@ struct HeaderView: View {
         Stepper("Images per Page: \(viewModel.imagesPerPage)", value: $viewModel.imagesPerPage, in: 1...100)
             .padding()
             .onChange(of: viewModel.imagesPerPage) {
-                viewModel.resetImages()
                 Task {
+                    await viewModel.resetImages()
                     await viewModel.fetchImages()
                 }
             }
@@ -111,16 +111,18 @@ struct ImageListView: View {
                     }
                 }) {
                     Text("Load More")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
+                        .primaryButton()
                 }
                 .padding()
             } else {
                 ProgressView()
                     .padding()
             }
+        }
+        .refreshable {
+            
+            await viewModel.resetImages()
+            await viewModel.fetchImages()
         }
     }
 }
