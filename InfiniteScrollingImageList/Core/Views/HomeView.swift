@@ -38,17 +38,46 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            List {
+                ForEach(viewModel.images) { image in
+                    ImageRowView(image: image)
+                }
+                
+                if !viewModel.isLoadingMore {
+                    Button(action: {
+                        Task {
+                            await viewModel.fetchImages()
+                        }
+                    }) {
+                        Text("Load More")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .padding()
+                } else {
+                    ProgressView()
+                        .padding()
+                }
+            }
         }
-        .padding()
+        .task {
+            await viewModel.fetchImages()
+        }
+        .alert(
+            isPresented: $viewModel.showAlert
+        ) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.alertMessage ?? "An unknown error occurred."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 
