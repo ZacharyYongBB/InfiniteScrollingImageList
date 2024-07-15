@@ -14,6 +14,8 @@
 		B604E1042C456BD40003A545 /* InfiniteScrollingImageListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604E1032C456BD40003A545 /* InfiniteScrollingImageListTests.swift */; };
 		B604E10E2C456BD40003A545 /* InfiniteScrollingImageListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604E10D2C456BD40003A545 /* InfiniteScrollingImageListUITests.swift */; };
 		B604E1102C456BD40003A545 /* InfiniteScrollingImageListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604E10F2C456BD40003A545 /* InfiniteScrollingImageListUITestsLaunchTests.swift */; };
+		B631A7162C456DE6003F7056 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7152C456DE6003F7056 /* ErrorMessage.swift */; };
+		B631A7182C456ED1003F7056 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7172C456ED1003F7056 /* ImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		B604E1092C456BD40003A545 /* InfiniteScrollingImageListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteScrollingImageListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B604E10D2C456BD40003A545 /* InfiniteScrollingImageListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollingImageListUITests.swift; sourceTree = "<group>"; };
 		B604E10F2C456BD40003A545 /* InfiniteScrollingImageListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollingImageListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B631A7152C456DE6003F7056 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		B631A7172C456ED1003F7056 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		B604E11F2C456C180003A545 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B631A7172C456ED1003F7056 /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 		B604E1212C456C460003A545 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B631A7152C456DE6003F7056 /* ErrorMessage.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B604E0F42C456BD20003A545 /* ContentView.swift in Sources */,
+				B631A7162C456DE6003F7056 /* ErrorMessage.swift in Sources */,
 				B604E0F22C456BD20003A545 /* InfiniteScrollingImageListApp.swift in Sources */,
+				B631A7182C456ED1003F7056 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
