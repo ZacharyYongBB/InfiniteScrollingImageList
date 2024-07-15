@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageItem: Identifiable, Decodable {
+struct ImageModel: Identifiable, Decodable {
     let id: String
     let author: String?
     let width: Int?
