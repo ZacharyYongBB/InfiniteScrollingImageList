@@ -41,6 +41,7 @@
  ok
  
  Customization of images per page.
+ ok
  
  
  Evaluation Criteria:
@@ -57,6 +58,15 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
+            Stepper("Images per Page: \(viewModel.imagesPerPage)", value: $viewModel.imagesPerPage, in: 1...100)
+                .padding()
+                .onChange(of: viewModel.imagesPerPage) {
+                    viewModel.resetImages()
+                    Task {
+                        await viewModel.fetchImages()
+                    }
+                }
+            
             List {
                 ForEach(viewModel.images) { image in
                     ImageRowView(image: image)

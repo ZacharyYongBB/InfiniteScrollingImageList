@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject {
     @Published var isLoadingMore = false
     @Published var alertMessage: String? = nil
     @Published var showAlert = false
+    @Published var imagesPerPage: Int = 10 // Default value
     private var currentPage = 1
     private let imageService = ImageService()
     
@@ -20,7 +21,7 @@ class HomeViewModel: ObservableObject {
         guard !isLoadingMore else { return }
         isLoadingMore = true
         do {
-            let newImages = try await imageService.fetchImages(page: currentPage)
+            let newImages = try await imageService.fetchImages(page: currentPage, limit: imagesPerPage)
             images.append(contentsOf: newImages)
             currentPage += 1
             
@@ -37,5 +38,10 @@ class HomeViewModel: ObservableObject {
             print("Developer Error Message: \(unknownError.developerMessage)")
         }
         isLoadingMore = false
+    }
+    
+    func resetImages() {
+        images.removeAll()
+        currentPage = 1
     }
 }

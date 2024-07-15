@@ -10,7 +10,7 @@ import Foundation
 class ImageService {
     private let baseURL = "https://picsum.photos/v2/list"
     
-    func fetchImages(page: Int, limit: Int = 10) async throws -> [ImageModel] {
+    func fetchImages(page: Int, limit: Int) async throws -> [ImageModel] {
         let urlString = "\(baseURL)?page=\(page)&limit=\(limit)"
         
         guard let url = URL(string: urlString) else {
