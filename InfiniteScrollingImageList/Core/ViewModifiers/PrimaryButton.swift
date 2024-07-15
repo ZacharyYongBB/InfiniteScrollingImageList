@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct PrimaryButton: ViewModifier {
-    var width: CGFloat
     var backgroundColor: Color
     var foregroundColor: Color
     
     func body(content: Content) -> some View {
         content
-            .frame(width: .infinity)
+            .frame(maxWidth: .infinity)
             .padding()
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
@@ -24,7 +23,7 @@ struct PrimaryButton: ViewModifier {
 }
 
 extension View {
-    func primaryButton(width: CGFloat = .infinity, backgroundColor: Color = .blue, foregroundColor: Color = .white) -> some View {
-        self.modifier(PrimaryButton(width: width, backgroundColor: backgroundColor, foregroundColor: foregroundColor))
+    func primaryButton(backgroundColor: Color = .blue, foregroundColor: Color = .white) -> some View {
+        self.modifier(PrimaryButton(backgroundColor: backgroundColor, foregroundColor: foregroundColor))
     }
 }
