@@ -13,46 +13,47 @@
  Create a Swift iOS app that displays images fetched from the Lorem Picsum API (https://picsum.photos/v2/list) in an infinite scrolling list.
  
  Requirements:
- UI: Display images in a UICollectionView or UITableView.
- used SwiftUI List
  
- Networking: Fetch image data from the API, handling pagination and errors.
- ok
+ - UI: Display images in a UICollectionView or UITableView.
+ Implemented using SwiftUI List for simplicity and native support.
  
- Pagination: Load images in batches as the user scrolls.
- ok
+ - Networking: Fetch image data from the API, handling pagination and errors.
+ Successfully implemented with async/await pattern for cleaner code.
  
- Lazy Loading: Load images only when visible on screen.
- ok
+ - Pagination: Load images in batches as the user scrolls.
+ Handled by fetching more images when the 'Load More' button is tapped.
  
- Image Caching: Cache images to avoid re-downloading.
- ok
+ - Lazy Loading: Load images only when visible on screen.
+ Achieved by using `List` view, which automatically handles cell reuse and on-demand loading.
  
- Testing:
- Unit Tests: Verify networking, pagination, and caching logic.
- ok
+ - Image Caching: Cache images to avoid re-downloading.
+ Images are cached once downloaded.
  
- UI Tests: Automate user interactions (scrolling, image loading).
- ok
+ - Testing:
+ Unit Tests: Verified ViewModel, networking, pagination, caching logic and error message.
+ UI Tests: Picker and LoadMore.
  
- Performance Tests: Monitor memory usage and CPU performance during scrolling.
+ - Performance Tests: Monitor memory usage and CPU performance during scrolling.
+ Ran memory allocation and leak analysis; no memory leaks detected.
+ Images are efficiently cached to minimize re-downloading and unnecessary memory usage.
+ Used Time Profiler to monitor CPU performance; performance is within acceptable limits during scrolling and image loading.
  
- Bonus Points:
- Error handling with informative messages.
- ok used Alert
  
- Placeholders for images while loading.
- ok
+ - Bonus Points:
+ - Error handling with informative messages.
+ Implemented using alerts for user feedback on errors.
  
- Customization of images per page.
- ok
+ - Placeholders for images while loading.
+ Placeholder images are shown while actual images are being fetched.
  
+ - Customization of images per page.
+ Users can select the number of images per page from a picker.
  
  Evaluation Criteria:
- Functionality
- Code quality (Swift best practices)
- Test coverage
- Performance (memory, CPU)
+ - Functionality
+ - Code quality (Swift best practices)
+ - Test coverage
+ - Performance (memory, CPU)
  */
 
 import SwiftUI
