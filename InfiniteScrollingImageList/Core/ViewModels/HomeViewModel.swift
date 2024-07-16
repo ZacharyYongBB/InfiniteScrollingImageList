@@ -13,9 +13,13 @@ class HomeViewModel: ObservableObject {
     @Published var isLoadingMore = false
     @Published var alertMessage: String? = nil
     @Published var showAlert = false
-    @Published var imagesPerPage: Int = 10 // Default value
+    @Published var imagesPerPage: Int = 10
     private var currentPage = 1
-    private let imageService = ImageService()
+    private let imageService : ImageService
+    
+    init(imageService: ImageService = ImageService()) {
+        self.imageService = imageService
+    }
     
     func fetchImages() async {
         guard !isLoadingMore else { return }
@@ -25,7 +29,7 @@ class HomeViewModel: ObservableObject {
             
             for imageModel in newImages {
                 if let url = imageModel.download_url, let urlObject = URL(string: url) {
-                    if let cachedImage = ImageCache.shared.image(forKey: url) {
+                    if ImageCache.shared.image(forKey: url) != nil {
                         print("Using cached image for URL: \(url)")
                     } else {
                         let image = await fetchImage(from: urlObject)
