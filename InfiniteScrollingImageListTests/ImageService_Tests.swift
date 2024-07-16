@@ -8,7 +8,7 @@
 import XCTest
 @testable import InfiniteScrollingImageList
 
-final class ImageServiceTests: XCTestCase {
+final class ImageService_Tests: XCTestCase {
 
     var imageService: ImageService!
 
