@@ -30,7 +30,11 @@
  
  Testing:
  Unit Tests: Verify networking, pagination, and caching logic.
+ ok
+ 
  UI Tests: Automate user interactions (scrolling, image loading).
+ ok
+ 
  Performance Tests: Monitor memory usage and CPU performance during scrolling.
  
  Bonus Points:

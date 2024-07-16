@@ -26,6 +26,7 @@
 		B6F3FC452C46B84100D20F3F /* ImageService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3FC442C46B84100D20F3F /* ImageService_Tests.swift */; };
 		B6F3FC472C46B9C100D20F3F /* ImageCache_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3FC462C46B9C100D20F3F /* ImageCache_Tests.swift */; };
 		B6F3FC492C46B9CC00D20F3F /* ErrorMessage_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3FC482C46B9CC00D20F3F /* ErrorMessage_Tests.swift */; };
+		B6F3FC4F2C46C5B500D20F3F /* HomeView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3FC4E2C46C5B500D20F3F /* HomeView_UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B6F3FC442C46B84100D20F3F /* ImageService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService_Tests.swift; sourceTree = "<group>"; };
 		B6F3FC462C46B9C100D20F3F /* ImageCache_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache_Tests.swift; sourceTree = "<group>"; };
 		B6F3FC482C46B9CC00D20F3F /* ErrorMessage_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage_Tests.swift; sourceTree = "<group>"; };
+		B6F3FC4E2C46C5B500D20F3F /* HomeView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_UITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				B604E10D2C456BD40003A545 /* InfiniteScrollingImageListUITests.swift */,
 				B604E10F2C456BD40003A545 /* InfiniteScrollingImageListUITestsLaunchTests.swift */,
+				B6F3FC4E2C46C5B500D20F3F /* HomeView_UITests.swift */,
 			);
 			path = InfiniteScrollingImageListUITests;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B604E1102C456BD40003A545 /* InfiniteScrollingImageListUITestsLaunchTests.swift in Sources */,
+				B6F3FC4F2C46C5B500D20F3F /* HomeView_UITests.swift in Sources */,
 				B604E10E2C456BD40003A545 /* InfiniteScrollingImageListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
