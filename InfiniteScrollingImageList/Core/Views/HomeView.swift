@@ -81,9 +81,18 @@ struct HomeView: View {
 // Header view containing the Stepper
 struct HeaderView: View {
     @ObservedObject var viewModel: HomeViewModel
-    
+    let options = Array(1...5) // Predefined options
+
     var body: some View {
-        Stepper("Images per Page: \(viewModel.imagesPerPage)", value: $viewModel.imagesPerPage, in: 1...100)
+        HStack {
+            Text("Images per Page:")
+                .padding()
+            Picker("Images per Page", selection: $viewModel.imagesPerPage) {
+                ForEach(options, id: \.self) { option in
+                    Text("\(option)").tag(option)
+                }
+            }
+            .pickerStyle(PalettePickerStyle())
             .padding()
             .onChange(of: viewModel.imagesPerPage) {
                 Task {
@@ -91,6 +100,7 @@ struct HeaderView: View {
                     await viewModel.fetchImages()
                 }
             }
+        }
     }
 }
 

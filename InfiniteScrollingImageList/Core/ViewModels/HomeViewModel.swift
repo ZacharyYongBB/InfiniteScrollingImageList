@@ -22,6 +22,20 @@ class HomeViewModel: ObservableObject {
         isLoadingMore = true
         do {
             let newImages = try await imageService.fetchImages(page: currentPage, limit: imagesPerPage)
+            
+            for imageModel in newImages {
+                if let url = imageModel.download_url, let urlObject = URL(string: url) {
+                    if let cachedImage = ImageCache.shared.image(forKey: url) {
+                        print("Using cached image for URL: \(url)")
+                    } else {
+                        let image = await fetchImage(from: urlObject)
+                        if let image = image {
+                            ImageCache.shared.setImage(image, forKey: url)
+                        }
+                    }
+                }
+            }
+            
             images.append(contentsOf: newImages)
             currentPage += 1
             
@@ -43,5 +57,15 @@ class HomeViewModel: ObservableObject {
     func resetImages() async {
         images.removeAll()
         currentPage = 1
+    }
+    
+    private func fetchImage(from url: URL) async -> UIImage? {
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            return UIImage(data: data)
+        } catch {
+            print("Failed to fetch image: \(error)")
+            return nil
+        }
     }
 }
