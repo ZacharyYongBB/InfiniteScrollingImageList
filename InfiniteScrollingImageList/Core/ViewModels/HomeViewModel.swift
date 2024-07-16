@@ -15,13 +15,13 @@ class HomeViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var imagesPerPage: Int = 10
     private var currentPage = 1
-    private let imageService : ImageService
+    private let imageService: ImageService
     
     init(imageService: ImageService = ImageService()) {
         self.imageService = imageService
     }
     
-    func fetchImages() async {
+    func fetchImages() async throws {
         guard !isLoadingMore else { return }
         isLoadingMore = true
         do {

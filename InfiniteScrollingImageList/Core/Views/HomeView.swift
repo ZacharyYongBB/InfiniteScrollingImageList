@@ -64,7 +64,13 @@ struct HomeView: View {
             ImageListView(viewModel: viewModel)
         }
         .task {
-            await viewModel.fetchImages()
+            do {
+                try await viewModel.fetchImages()
+            } catch {
+                print("Failed to fetch images: \(error)")
+                viewModel.alertMessage = "An error occurred while fetching images."
+                viewModel.showAlert = true
+            }
         }
         .alert(
             isPresented: $viewModel.showAlert
@@ -82,7 +88,7 @@ struct HomeView: View {
 struct HeaderView: View {
     @ObservedObject var viewModel: HomeViewModel
     let options = Array(1...5) // Predefined options
-
+    
     var body: some View {
         HStack {
             Text("Images per Page:")
@@ -96,8 +102,15 @@ struct HeaderView: View {
             .padding()
             .onChange(of: viewModel.imagesPerPage) {
                 Task {
-                    await viewModel.resetImages()
-                    await viewModel.fetchImages()
+                    do {
+                        await viewModel.resetImages()
+                        try await viewModel.fetchImages()
+                    } catch {
+                        // Handle or log the error
+                        print("Failed to fetch images after page size change: \(error)")
+                        viewModel.alertMessage = "An error occurred while fetching images."
+                        viewModel.showAlert = true
+                    }
                 }
             }
         }
@@ -117,7 +130,13 @@ struct ImageListView: View {
             if !viewModel.isLoadingMore {
                 Button(action: {
                     Task {
-                        await viewModel.fetchImages()
+                        do {
+                            try await viewModel.fetchImages()
+                        } catch {
+                            print("Failed to fetch images on 'Load More': \(error)")
+                            viewModel.alertMessage = "An error occurred while fetching more images."
+                            viewModel.showAlert = true
+                        }
                     }
                 }) {
                     Text("Load More")
@@ -130,9 +149,14 @@ struct ImageListView: View {
             }
         }
         .refreshable {
-            
-            await viewModel.resetImages()
-            await viewModel.fetchImages()
+            do {
+                await viewModel.resetImages()
+                try await viewModel.fetchImages()
+            } catch {
+                print("Failed to fetch images on refresh: \(error)")
+                viewModel.alertMessage = "An error occurred while refreshing images."
+                viewModel.showAlert = true
+            }
         }
     }
 }
