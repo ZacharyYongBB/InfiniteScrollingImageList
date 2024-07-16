@@ -23,6 +23,7 @@
 		B631A7282C45BF2F003F7056 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7272C45BF2F003F7056 /* PrimaryButton.swift */; };
 		B631A72A2C467459003F7056 /* HomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631A7292C467459003F7056 /* HomeViewModel_Tests.swift */; };
 		B6F3FC432C46ABAA00D20F3F /* MockErrorImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3FC422C46ABAA00D20F3F /* MockErrorImageService.swift */; };
+		B6F3FC452C46B84100D20F3F /* ImageService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3FC442C46B84100D20F3F /* ImageService_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B631A7272C45BF2F003F7056 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		B631A7292C467459003F7056 /* HomeViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel_Tests.swift; sourceTree = "<group>"; };
 		B6F3FC422C46ABAA00D20F3F /* MockErrorImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockErrorImageService.swift; sourceTree = "<group>"; };
+		B6F3FC442C46B84100D20F3F /* ImageService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B6F3FC412C46AB9A00D20F3F /* Mock */,
+				B6F3FC442C46B84100D20F3F /* ImageService_Tests.swift */,
 				B604E1032C456BD40003A545 /* InfiniteScrollingImageListTests.swift */,
 				B631A7292C467459003F7056 /* HomeViewModel_Tests.swift */,
 			);
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B604E1042C456BD40003A545 /* InfiniteScrollingImageListTests.swift in Sources */,
+				B6F3FC452C46B84100D20F3F /* ImageService_Tests.swift in Sources */,
 				B631A72A2C467459003F7056 /* HomeViewModel_Tests.swift in Sources */,
 				B6F3FC432C46ABAA00D20F3F /* MockErrorImageService.swift in Sources */,
 			);

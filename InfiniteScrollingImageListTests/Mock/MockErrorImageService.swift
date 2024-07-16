@@ -26,3 +26,16 @@ class MockRandomErrorImageService: ImageService {
         throw randomError
     }
 }
+
+
+class MockInvalidURLImageService: ImageService {
+    override func fetchImages(page: Int, limit: Int) async throws -> [ImageModel] {
+        throw ErrorMessage.invalidURL
+    }
+}
+
+class MockNetworkErrorImageService: ImageService {
+    override func fetchImages(page: Int, limit: Int) async throws -> [ImageModel] {
+        throw ErrorMessage.networkError
+    }
+}
